@@ -114,9 +114,6 @@ export class AppComponent {
   @ViewChild('slider') slider!: ElementRef;
   @ViewChild('tocopy') tocopy!: ElementRef;
   ngAfterViewInit(): void {
-    // this.rangeValue =
-    //   (this.slider.nativeElement.min + this.slider.nativeElement.max) / 2;
-    // this.updateSliderBackground();
     setTimeout(() => {
       this.rangeValue =
         (this.slider.nativeElement.min + this.slider.nativeElement.max) / 2;
