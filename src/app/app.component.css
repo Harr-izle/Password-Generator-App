@@ -1,0 +1,285 @@
+h1 {
+    color: #817D92;
+    text-align: center;
+    font-size: 1.3rem;
+    margin-block-end: 1.8rem;
+  }
+  .passGen__container {
+    /* border: 2px solid red; */
+    width: 30rem;
+    height: 35rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  /* password generated wrapper */
+  .passGen__outputwrapper {
+    /* border: 2px solid green; */
+    background-color: #24232C;
+    min-height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+  .passGen__outputwrapper > input {
+    width: 70%;
+    background-color: #24232C;
+    border: none;
+    font-size: 1.8rem;
+    color: white;
+    flex-shrink: 0;
+  }
+  .passGen__outputwrapper > span {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #A4FFAF;
+    /* border: 2px solid red; */
+  }
+  .passGen__outputwrapper > span > svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: #A4FFAF;
+    transition: fill 0.5s;
+  }
+  /* password generator controls  */
+  /* wrapper */
+  .passGen__controlswrapper {
+    /* border: 2px solid green; */
+    background-color: #24232C;
+    height: 100%;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .passGen__characterlength {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid red; */
+    margin-block-end: 0.5rem;
+  }
+  .passGen__characterlength > p {
+    font-size: 1rem;
+  }
+  #lengthcount {
+    font-size: 2rem;
+    color: #A4FFAF;
+  }
+  #passlength {
+    width: 100%;
+    display: block;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 0.4rem;
+    background-color: #18171F;
+  }
+  /* styling range slider for chrome */
+  #passlength::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    transition: background-color 0.5s;
+  }
+  /* styling range slider for mozilla */
+  #passlength::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    transition: background-color 0.5s;
+  }
+  /* styling checkboxes */
+  .passGen__tickboxeswrapper {
+    /* border: 2px solid brown; */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .passGen__tickboxeswrapper > span {
+    display: flex;
+    gap: 1.5rem;
+  }
+  /* checkbox */
+  .checkbox {
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 2px solid white;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+  }
+  .checkbox:hover {
+    border: 2px solid #A4FFAF;
+  }
+  /* class to apply when checkbox is checked */
+  .checked {
+    background-color: #A4FFAF;
+    border: none;
+  }
+  /* Password strength styling */
+  .passGen__passStrength,
+  .passGen__passGenerate {
+    /* border: 2px solid blue; */
+    min-height: 3.5rem;
+  }
+  .passGen__passStrength {
+    background-color: #18171F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+  }
+  /* strength text */
+  .passGen__passStrength > p {
+    color: #817D92;
+  }
+  /* strength indicator wrapper container */
+  .strenghtInd-wrapper {
+    display: flex;
+    gap: 0.4rem;
+    /* border: 2px solid blue; */
+  }
+  /* password strength Text */
+  #passStrengthText {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  /* indicators wrapper */
+  .indicators {
+    /* border: 2px solid green; */
+    display: flex;
+    gap: 0.4rem;
+  }
+  /* actuall indicators */
+  .indicators > span {
+    width: 0.7rem;
+    border: 1px solid white;
+    transition: background-color 0.5s;
+  }
+  /* generate section styling */
+  .passGen__passGenerate {
+    background-color: #A4FFAF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.5s;
+    cursor: pointer;
+  }
+  /* arrow img */
+  .passGen__passGenerate > svg {
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+  /* password indicator colors */
+  /* TOO WEAK */
+  .indicators[passStrength="tooWeak"] > #firstIndicator {
+    background-color: #F64A4A;
+  }
+  /* WEAK */
+  .indicators[passStrength="weak"] > #firstIndicator {
+    background-color: #F64A4A;
+  }
+  .indicators[passStrength="weak"] > #secondtIndicator {
+    background-color: #F64A4A;
+  }
+  /* MEDIUM  */
+  .indicators[passStrength="medium"] > #firstIndicator {
+    background-color: #F8CD65;
+  }
+  .indicators[passStrength="medium"] > #secondIndicator {
+    background-color: #F8CD65;
+  }
+  .indicators[passStrength="medium"] > #thirdIndicator {
+    background-color: #F8CD65;
+  }
+  /* STRONG */
+  .indicators[passStrength="strong"] > #firstIndicator {
+    background-color: #A4FFAF;
+  }
+  .indicators[passStrength="strong"] > #secondIndicator {
+    background-color: #A4FFAF;
+  }
+  .indicators[passStrength="strong"] > #thirdIndicator {
+    background-color: #A4FFAF;
+  }
+  .indicators[passStrength="strong"] > #forthIndicator {
+    background-color: #A4FFAF;
+  }
+  /* HOVER EFFECTS */
+  .checkbox:hover {
+    border: 2px solid #A4FFAF;
+  }
+  .passGen__outputwrapper > span > svg:hover {
+    fill: white;
+    cursor: pointer;
+  }
+  #passlength::-moz-range-thumb:hover {
+    background-color: #18171F;
+    border: 2px solid #A4FFAF;
+    cursor: pointer;
+  }
+  #passlength::-webkit-slider-thumb {
+    background-color: #18171F;
+    border: 2px solid #A4FFAF;
+    cursor: pointer;
+  }
+  .passGen__passGenerate:hover {
+    background-color: #24232C;
+    border: 2px solid #A4FFAF;
+  }
+  .passGen__passGenerate:hover > p {
+    color: #A4FFAF;
+  }
+  .passGen__passGenerate:hover > svg {
+    fill: #A4FFAF;
+  }
+  /* MEDIA QUERY */
+  @media (max-width: 498px) {
+    .passGen__container {
+      width: 20rem;
+    }
+    .passGen__outputwrapper {
+      /* border: 2px solid green; */
+      min-height: 3.5rem;
+    }
+    .passGen__outputwrapper > input {
+      width: 70%;
+      font-size: 1.5rem;
+    }
+    .passGen__controlswrapper {
+      padding: 0.5rem 0.9rem;
+      height: fit-content;
+    }
+    #lengthcount {
+      font-size: 1.2rem;
+    }
+    .includetext {
+      font-size: 0.9rem;
+    }
+    #passStrengthText {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    .indicators {
+      gap: 0.2rem;
+    }
+    /* actuall indicators */
+    .indicators > span {
+      width: 0.4rem;
+    }
+    .passGen__passGenerate {
+      margin-block-start: -0.5rem;
+    }
+  }
