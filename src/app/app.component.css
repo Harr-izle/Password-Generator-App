@@ -4,8 +4,7 @@ h1 {
     font-size: 1.3rem;
     margin-block-end: 1.8rem;
   }
-  .passGen__container {
-    /* border: 2px solid red; */
+  .main-container {
     width: 30rem;
     height: 35rem;
     margin: auto;
@@ -13,16 +12,15 @@ h1 {
     flex-direction: column;
     gap: 1.5rem;
   }
-  /* password generated wrapper */
-  .passGen__outputwrapper {
-    /* border: 2px solid green; */
+  /* password generated  */
+  .generated-password {
     background-color: #24232C;
     min-height: 5rem;
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 1rem;
   }
-  .passGen__outputwrapper > input {
+  .generated-password > input {
     width: 70%;
     background-color: #24232C;
     border: none;
@@ -30,7 +28,7 @@ h1 {
     color: white;
     flex-shrink: 0;
   }
-  .passGen__outputwrapper > span {
+  .generated-password > span {
     width: 20%;
     display: flex;
     align-items: center;
@@ -38,32 +36,30 @@ h1 {
     gap: 0.5rem;
     font-size: 0.8rem;
     color: #A4FFAF;
-    /* border: 2px solid red; */
   }
-  .passGen__outputwrapper > span > svg {
+  .generated-password > span > svg {
     width: 1.8rem;
     height: 1.8rem;
     fill: #A4FFAF;
     transition: fill 0.5s;
   }
+
   /* password generator controls  */
-  /* wrapper */
-  .passGen__controlswrapper {
-    /* border: 2px solid green; */
+  .generate-password-control {
     background-color: #24232C;
     height: 100%;
     padding: 0.5rem 1.5rem;
     display: flex;
     flex-direction: column;
   }
-  .passGen__characterlength {
+
+  .generate-password-length {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 2px solid red; */
     margin-block-end: 0.5rem;
   }
-  .passGen__characterlength > p {
+  .generate-password-length > p {
     font-size: 1rem;
   }
   #lengthcount {
@@ -85,7 +81,7 @@ h1 {
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
-    transition: background-color 0.5s;
+    background-color: #E6E5EA;
   }
   /* styling range slider for mozilla */
   #passlength::-moz-range-thumb {
@@ -95,18 +91,20 @@ h1 {
     height: 1.5rem;
     border-radius: 50%;
     transition: background-color 0.5s;
+    fill: #E6E5EA;
   }
   /* styling checkboxes */
-  .passGen__tickboxeswrapper {
+  .generate-password-checkboxes {
     /* border: 2px solid brown; */
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
-  .passGen__tickboxeswrapper > span {
+  .generate-password-checkboxes > span {
     display: flex;
     gap: 1.5rem;
   }
+
   /* checkbox */
   .checkbox {
     width: 1.2rem;
@@ -125,12 +123,11 @@ h1 {
     border: none;
   }
   /* Password strength styling */
-  .passGen__passStrength,
-  .passGen__passGenerate {
-    /* border: 2px solid blue; */
+  .generate-password-strength,
+  .generate-password {
     min-height: 3.5rem;
   }
-  .passGen__passStrength {
+  .generate-password-strength {
     background-color: #18171F;
     display: flex;
     justify-content: space-between;
@@ -138,34 +135,33 @@ h1 {
     padding: 10px 30px;
   }
   /* strength text */
-  .passGen__passStrength > p {
+  .generate-password-strength > p {
     color: #817D92;
   }
-  /* strength indicator wrapper container */
-  .strenghtInd-wrapper {
+  /* strength indicator */
+  .strength-indicator {
     display: flex;
     gap: 0.4rem;
-    /* border: 2px solid blue; */
   }
+
   /* password strength Text */
-  #passStrengthText {
-    font-size: 1.4rem;
-    font-weight: bold;
+  #strength-text {
+    font-size: 1.5rem;
+    font-weight: medium;
   }
-  /* indicators wrapper */
+  /* indicators  */
   .indicators {
-    /* border: 2px solid green; */
     display: flex;
     gap: 0.4rem;
   }
-  /* actuall indicators */
+  /* actual indicator */
   .indicators > span {
     width: 0.7rem;
     border: 1px solid white;
     transition: background-color 0.5s;
   }
   /* generate section styling */
-  .passGen__passGenerate {
+  .generate-password {
     background-color: #A4FFAF;
     display: flex;
     justify-content: center;
@@ -177,8 +173,9 @@ h1 {
     transition: background-color 0.5s;
     cursor: pointer;
   }
-  /* arrow img */
-  .passGen__passGenerate > svg {
+
+  /* arrow svg */
+  .generate-password > svg {
     width: 0.7rem;
     height: 0.7rem;
   }
@@ -187,11 +184,12 @@ h1 {
   .indicators[passStrength="tooWeak"] > #firstIndicator {
     background-color: #F64A4A;
   }
+
   /* WEAK */
   .indicators[passStrength="weak"] > #firstIndicator {
     background-color: #F64A4A;
   }
-  .indicators[passStrength="weak"] > #secondtIndicator {
+  .indicators[passStrength="weak"] > #secondIndicator {
     background-color: #F64A4A;
   }
   /* MEDIUM  */
@@ -204,6 +202,7 @@ h1 {
   .indicators[passStrength="medium"] > #thirdIndicator {
     background-color: #F8CD65;
   }
+
   /* STRONG */
   .indicators[passStrength="strong"] > #firstIndicator {
     background-color: #A4FFAF;
@@ -221,7 +220,7 @@ h1 {
   .checkbox:hover {
     border: 2px solid #A4FFAF;
   }
-  .passGen__outputwrapper > span > svg:hover {
+  .generated-password > span > svg:hover {
     fill: white;
     cursor: pointer;
   }
@@ -235,30 +234,35 @@ h1 {
     border: 2px solid #A4FFAF;
     cursor: pointer;
   }
-  .passGen__passGenerate:hover {
+  .generate-password:hover {
     background-color: #24232C;
     border: 2px solid #A4FFAF;
   }
-  .passGen__passGenerate:hover > p {
+  .generate-password:hover > p {
     color: #A4FFAF;
   }
-  .passGen__passGenerate:hover > svg {
+  .generate-password:hover > svg {
     fill: #A4FFAF;
   }
+
   /* MEDIA QUERY */
-  @media (max-width: 498px) {
-    .passGen__container {
+  @media (max-width: 425px) {
+    .main-container {
       width: 20rem;
     }
-    .passGen__outputwrapper {
-      /* border: 2px solid green; */
+    .generated-password {
       min-height: 3.5rem;
+      
     }
-    .passGen__outputwrapper > input {
+    .generated-password > input {
       width: 70%;
       font-size: 1.5rem;
     }
-    .passGen__controlswrapper {
+
+    .generated-password > span > svg{
+        margin-left: -1.5rem;
+    }
+    .generate-password-control {
       padding: 0.5rem 0.9rem;
       height: fit-content;
     }
@@ -268,18 +272,18 @@ h1 {
     .includetext {
       font-size: 0.9rem;
     }
-    #passStrengthText {
+    #strength-text {
       font-size: 1.1rem;
-      font-weight: bold;
+      font-weight: medium;
     }
     .indicators {
       gap: 0.2rem;
     }
-    /* actuall indicators */
+    /* actual indicators */
     .indicators > span {
       width: 0.4rem;
     }
-    .passGen__passGenerate {
+    .generate-password {
       margin-block-start: -0.5rem;
     }
   }
