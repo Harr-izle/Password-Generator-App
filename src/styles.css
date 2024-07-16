@@ -1,0 +1,33 @@
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+body {
+  background-color: #100F16;
+  height: 100vh;
+  font-family: "JetBrains Mono", monospace;
+  align-content: center;
+  color: white;
+}
+img {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+.space{
+  margin-block: 1rem;
+}
+
+
+
+
+
+
+
+
+
