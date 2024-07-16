@@ -89,7 +89,7 @@ h1 {
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
-    background-color: #E6E5EA;
+    background: #E6E5EA;
   }
   /* styling range slider for mozilla */
   #passlength::-moz-range-thumb {
@@ -239,7 +239,7 @@ h1 {
     border: 2px solid #A4FFAF;
     cursor: pointer;
   }
-  #passlength::-webkit-slider-thumb {
+  #passlength::-webkit-slider-thumb:hover {
     background-color: #18171F;
     border: 2px solid #A4FFAF;
     cursor: pointer;
